@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Budget</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex bg-gray-100 text-gray-800 font-sans">
+
+  <!-- Sidebar -->
+  <aside class="w-64 bg-blue-800 text-white flex-shrink-0 min-h-screen">
+    <div class="p-6">
+      <h2 class="text-2xl font-bold mb-6">Budget</h2>
+      <ul class="space-y-4">
+        <li>
+          <a href="dashboard.html" class="block hover:text-blue-300">Dashboard</a>
+        </li>
+        <li>
+          <a href="transactions.html" class="block hover:text-blue-300">Transactions</a>
+        </li>
+        <li>
+          <a href="#" class="block text-blue-200 font-semibold">Budget</a>
+        </li>
+        <li>
+          <a href="reports.html" class="block hover:text-blue-300">Reports</a>
+        </li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-10">
+    <h1 class="text-3xl font-bold mb-4">Budget Allocation</h1>
+    <p class="mb-6 text-gray-600">Set monthly limits and track against your budget.</p>
+
+    <!-- Budget Form -->
+    <form id="budget-form" class="bg-white p-6 rounded shadow-md max-w-md space-y-4">
+      <div>
+        <label for="category" class="block font-medium text-gray-700">Category</label>
+        <input type="text" id="category" name="category" required
+               class="w-full mt-1 px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+
+      <div>
+        <label for="limit" class="block font-medium text-gray-700">Monthly Limit</label>
+        <input type="number" id="limit" name="limit" required
+               class="w-full mt-1 px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+
+      <button type="submit"
+              class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">
+        Set Budget
+      </button>
+    </form>
+
+    <!-- Budget List -->
+    <h2 class="text-2xl font-semibold mt-10 mb-4">Allocated Budgets</h2>
+    <ul id="budget-list" class="space-y-2 bg-white p-6 rounded shadow-md max-w-md">
+      <!-- Budget items will appear here -->
+    </ul>
+  </main>
+
+  <script src="index.js"></script>
+</body>
+</html>
