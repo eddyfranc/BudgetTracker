@@ -1,5 +1,3 @@
-// Login page
-// index.js
 
 document.addEventListener('DOMContentLoaded', () => {
   const loginForm = document.getElementById('loginForm');
