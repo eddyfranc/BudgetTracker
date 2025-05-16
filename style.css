@@ -1,0 +1,17 @@
+*body{
+  margin:0px;
+  padding:0px;
+  box-sizing: border-box;
+}
+.list{
+    display:flex;
+    justify-content: space-between;
+}
+
+
+#modal:not(.hidden) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

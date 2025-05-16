@@ -5,108 +5,207 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>BudgetTracker Login and Sign up</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="bg-blue-50 font-sans ">
-    <nav class="bg-blue-600 text-white shadow-md">
+  <body class="image font-sans">
+    <nav class="fixed top-0 w-full bg-blue-600 text-white shadow-md z-50">
       <div
         class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center"
       >
         <div class="text-xl font-bold">BUDGETTRACKER</div>
-        <ul class="flex text-sm font-medium">
-          <li><a href="#" class="hover:text-blue-100 transition">HOME</a></li>
-          <li>
-            <a href="#loginform" class="hover:text-blue-100 transition"
-              >ABOUT</a
-            >
-          </li>
-        </ul>
-        <a
-          href="#loginForm"
-          class="bg-white text-blue-600 px-4 py-2 rounded hover:bg-blue-100 text-sm font-semibold transition"
-          >Login</a
-        >
-      </div>
-    </nav>
-      <div
-        class="flex items-center justify-center min-h-[calc(100vh-80px)] px-4"
-      >
-        <div class="w-full max-w-md bg-white rounded-lg shadow-lg p-8 mt-4">
-          <!-- Login Form -->
-          <form id="loginForm" class="form active space-y-6">
-            <h2 class="text-3xl font-bold text-blue-700 mb-6 text-center">
-              Login
-            </h2>
-            <input
-              type="email"
-              id="loginEmail"
-              placeholder="Email"
-              required
-              class="w-full px-4 py-3 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <input
-              type="password"
-              id="loginPassword"
-              placeholder="Password"
-              required
-              class="w-full px-4 py-3 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <button
-              type="submit"
-              class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-md transition"
-            >
-              Login
-            </button>
-            <p
-              id="loginMessage"
-              class="text-sm text-red-600 min-h-[1.25rem]"
-            ></p>
-            <p class="text-center text-sm text-blue-600">
-              Don't have an account?
-              <a href="#" id="showSignup" class="font-semibold hover:underline"
-                >Sign up</a
-              >
-            </p>
-          </form>
-
-          <!-- Signup Form -->
-          <form id="signupForm" class="form space-y-6 hidden">
-            <h2 class="text-3xl font-bold text-blue-700 mb-6 text-center">
-              Sign Up
-            </h2>
-            <input
-              type="email"
-              id="signupEmail"
-              placeholder="Email"
-              required
-              class="w-full px-4 py-3 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <input
-              type="password"
-              id="signupPassword"
-              placeholder="Password"
-              required
-              class="w-full px-4 py-3 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <button
-              type="submit"
-              class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-md transition"
-            >
-              Sign Up
-            </button>
-            <p
-              id="signupMessage"
-              class="text-sm text-red-600 min-h-[1.25rem]"
-            ></p>
-            <p class="text-center text-sm text-blue-600">
-              Already have an account?
-              <a href="#" id="showLogin" class="font-semibold hover:underline"
-                >Login</a
-              >
-            </p>
-          </form>
+        <div>
+          <button
+            id="myBtn"
+            class="bg-white text-blue-600 px-4 py-2 rounded hover:bg-blue-100 text-sm font-semibold transition"
+          >
+            Login
+          </button>
         </div>
       </div>
+    </nav>
+    <div>
+      <img src="image.png" class="h-100vh"alt="Imgae">
+    </div>
 
-    <script src="index.js"></script>
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-50">
+      <div class="bg-white w-full max-w-md rounded-lg shadow-lg p-8 relative">
+        <!-- Close button -->
+        <button  id="closeModal" class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-xl font-bold" > &times;</button>
+
+        <!-- Login Form -->
+        <form id="loginForm" class="form active">
+          <h2 class="text-3xl font-bold text-blue-700 mb-6 text-center">
+            Login
+          </h2>
+          <input
+            type="email"
+            id="loginEmail"
+            placeholder="Email"
+            required
+            class="w-full px-4 py-3 mb-6 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <input
+            type="password"
+            id="loginPassword"
+            placeholder="Password"
+            required
+            class="w-full px-4 py-3 mb-6 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <button
+            type="submit"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 mb-6 rounded-md transition"
+          >
+            Login
+          </button>
+          <div>
+            <input type="checkbox" id="checkbox" class="mb-4" />
+            <label for="checkbox">Remember Me</label>
+          </div>
+          <p id="loginMessage" class="text-sm text-red-600"></p>
+          <p class="text-center text-sm text-blue-600">
+            Don't have an account?
+            <a href="#" id="showSignup" class="font-semibold hover:underline"
+              >Sign up</a
+            >
+          </p>
+        </form>
+
+        <!-- Signup Form -->
+        <form id="signupForm" class="form hidden">
+          <h2 class="text-3xl font-bold text-blue-700 mb-6 text-center">
+            Sign Up
+          </h2>
+          <input
+            type="email"
+            id="signupEmail"
+            placeholder="Email"
+            required
+            class="w-full px-4 py-3 mb-6 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <input
+            type="password"
+            id="signupPassword"
+            placeholder="Password"
+            required
+            class="w-full px-4 py-3 mb-6 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <button
+            type="submit"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-md transition"
+          >
+            Sign Up
+          </button>
+          <p id="signupMessage" class="text-sm text-red-600"></p>
+          <p class="text-center text-sm text-blue-600">
+            Already have an account?
+            <a href="#" id="showLogin" class="font-semibold hover:underline"
+              >Login</a
+            >
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      const loginForm = document.getElementById("loginForm");
+      const signupForm = document.getElementById("signupForm");
+      const showSignupForm = document.getElementById("showSignup");
+      const showLoginForm = document.getElementById("showLogin");
+      const loginMessage = document.getElementById("loginMessage");
+      const signupMessage = document.getElementById("signupMessage");
+      const modal = document.getElementById("modal");
+      const openModalBtn = document.getElementById("myBtn");
+      const closeModalBtn = document.getElementById("closeModal");
+
+      // Show modal
+      openModalBtn.addEventListener("click", () => {
+        modal.classList.remove("hidden");
+        loginForm.style.display = "block";
+        signupForm.style.display = "none";
+        clearMessages();
+      });
+
+      // Close modal
+      closeModalBtn.addEventListener("click", () => {
+        modal.classList.add("hidden");
+      });
+
+      // Switch to Signup form
+      showSignupForm.addEventListener("click", (e) => {
+        e.preventDefault();
+        loginForm.style.display = "none";
+        signupForm.style.display = "block";
+        clearMessages();
+      });
+
+      // Switch to Login form
+      showLoginForm.addEventListener("click", (e) => {
+        e.preventDefault();
+        signupForm.style.display = "none";
+        loginForm.style.display = "block";
+        clearMessages();
+      });
+
+      // Clear messages
+      function clearMessages() {
+        loginMessage.textContent = "";
+        signupMessage.textContent = "";
+      }
+
+      // Validate email to gmail only
+      function isValidEmail(email) {
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+        return emailPattern.test(email);
+      }
+
+      // Handle login
+      loginForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        clearMessages();
+        const email = document.getElementById("loginEmail").value.trim();
+        const password = document.getElementById("loginPassword").value.trim();
+
+        if (email === "" || password === "") {
+          loginMessage.textContent = "Please enter both email and password.";
+          return;
+        }
+
+        if (!isValidEmail(email)) {
+          loginMessage.textContent = "Only Gmail addresses are allowed.";
+          return;
+        }
+
+        loginMessage.textContent = "Logging in...";
+        setTimeout(() => {
+          window.location.href = "dashboard.html";
+        }, 1000);
+      });
+
+      // Handle signup
+      signupForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        clearMessages();
+        const email = document.getElementById("signupEmail").value.trim();
+        const password = document.getElementById("signupPassword").value.trim();
+
+        if (email === "" || password === "") {
+          signupMessage.textContent = "Please enter both email and password.";
+          return;
+        }
+
+        if (!isValidEmail(email)) {
+          signupMessage.textContent = "Only Gmail addresses are allowed.";
+          return;
+        }
+
+        signupMessage.textContent = "Signup successful! You can now login.";
+
+        setTimeout(() => {
+          signupForm.style.display = "none";
+          loginForm.style.display = "block";
+          clearMessages();
+        }, 1000);
+      });
+    </script>
   </body>
 </html>
