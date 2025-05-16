@@ -17,9 +17,10 @@
               <a href="#" class="block hover:text-blue-300">Dashboard</a>
             </li>
             <li>
-              <a href="transactions.html" class="block hover:text-blue-300">Transactions</a>
+              <a href="transactions.html" class="block hover:text-blue-300"
+                >Transactions</a
+              >
             </li>
-            
           </ul>
         </div>
       </div>
@@ -30,7 +31,9 @@
         <div class="flex justify-between items-center mb-8">
           <div>
             <h2 class="text-2xl font-bold text-blue-900">Welcome</h2>
-            <p class="text-gray-600 text-sm">Track your income and expenses here.</p>
+            <p class="text-gray-600 text-sm">
+              Track your income and expenses here.
+            </p>
           </div>
         </div>
 
@@ -45,69 +48,73 @@
             <p id="total-expenses" class="text-2xl font-bold mt-2">$0.00</p>
           </div>
           <div class="bg-yellow-100 p-6 rounded shadow text-center">
-            <p class="text-xl font-semibold text-yellow-800">Remaining Budget</p>
+            <p class="text-xl font-semibold text-yellow-800">
+              Remaining Budget
+            </p>
             <p id="remaining-budget" class="text-2xl font-bold mt-2">$0.00</p>
           </div>
         </div>
 
         <!-- Transaction Form -->
         <div class="bg-white p-6 rounded shadow mb-10">
-          <h3 class="text-xl font-semibold mb-4 text-blue-900">Add New Transaction</h3>
+          <h3 class="text-xl font-semibold mb-4 text-blue-900">
+            Add New Transaction
+          </h3>
           <form id="transaction-form" class="grid grid-cols-5 gap-4">
-  <input
-    type="text"
-    id="description"
-    placeholder="Description"
-    required
-    class="col-span-1 p-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-  />
-  <input
-    type="number"
-    id="amount"
-    placeholder="Amount"
-    required
-    class="col-span-1 p-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-  />
-  <select
-    id="type"
-    class="col-span-1 p-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-    onchange="toggleCategoryDropdown()"
-  >
-    <option value="income">Income</option>
-    <option value="expense">Expense</option>
-  </select>
+            <input
+              type="text"
+              id="description"
+              placeholder="Description"
+              required
+              class="col-span-1 p-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <input
+              type="number"
+              id="amount"
+              placeholder="Amount"
+              required
+              class="col-span-1 p-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <select
+              id="type"
+              class="col-span-1 p-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+              onchange="toggleCategoryDropdown()"
+            >
+              <option value="income">Income</option>
+              <option value="expense">Expense</option>
+            </select>
 
-  <!-- Category dropdown for different  expense -->
-  <select
-    id="category"
-    class="col-span-1 p-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 hidden"
-  >
-    <option value="food">Food</option>
-    <option value="travel">Travel</option>
-    <option value="entertainment">Entertainment</option>
-    <option value="utilities">Utilities</option>
-    <option value="other">Other</option>
-  </select>
+            <!-- Category dropdown for different  expense -->
+            <select
+              id="category"
+              class="col-span-1 p-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 hidden"
+            >
+              <option value="food">Food</option>
+              <option value="travel">Travel</option>
+              <option value="entertainment">Entertainment</option>
+              <option value="utilities">Utilities</option>
+              <option value="other">Other</option>
+            </select>
 
-  <button
-    type="submit"
-    class="col-span-1 bg-blue-700 text-white rounded px-4 py-2 hover:bg-blue-800 transition"
-  >
-    Add
-  </button>
-</form>
-
+            <button
+              type="submit"
+              class="col-span-1 bg-blue-700 text-white rounded px-4 py-2 hover:bg-blue-800 transition"
+            >
+              Add
+            </button>
+          </form>
         </div>
 
         <!-- Transaction List -->
         <div class="bg-white p-6 rounded shadow">
-          <h3 class="text-xl font-semibold mb-4 text-blue-900">Recent Transactions</h3>
-          <ul id="transaction-list" class="space-y-3 text-gray-800">
-          </ul>
+          <h3 class="text-xl font-semibold mb-4 text-blue-900">
+            Recent Transactions
+          </h3>
+          <ul id="transaction-list" class="space-y-3 text-gray-800"></ul>
         </div>
       </main>
     </div>
 
-<script src="index.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
