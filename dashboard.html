@@ -84,7 +84,7 @@
               <option value="expense">Expense</option>
             </select>
 
-            <!-- Category dropdown for different  expense -->
+            <!-- Category  expense -->
             <select
               id="category"
               class="col-span-1 p-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 hidden"
@@ -105,13 +105,18 @@
           </form>
         </div>
 
-        <!-- Transaction List -->
+        <!-- Transaction -->
         <div class="bg-white p-6 rounded shadow">
           <h3 class="text-xl font-semibold mb-4 text-blue-900">
             Recent Transactions
           </h3>
           <ul id="transaction-list" class="space-y-3 text-gray-800"></ul>
         </div>
+        <div class="mt-5">
+  <button class="delete-btn bg-red-500 hover:bg-red-600 text-white font-semibold py-1 px-3 rounded shadow" id="deleteBtn">
+    Delete
+  </button>
+</div>
       </main>
     </div>
 

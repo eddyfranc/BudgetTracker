@@ -2,7 +2,7 @@ const getStoredData = (key) => JSON.parse(localStorage.getItem(key)) || [];
 const setStoredData = (key, data) =>
   localStorage.setItem(key, JSON.stringify(data));
 
-// Add a new transaction and update UI
+// Add transaction
 function addTransaction({ description, amount, type, category, date }) {
   const transactions = getStoredData("transactions");
   transactions.push({ description, amount, type, category, date });
@@ -11,16 +11,16 @@ function addTransaction({ description, amount, type, category, date }) {
   updateDashboardSummary();
 }
 
-// Render transactions on dashboard (list) and transactions page (table)
+// Render transactions
 function renderTransactions() {
   const transactions = getStoredData("transactions");
 
-  // Dashboard recent transactions list (last 5)
+  // Dashboard rtransaction
   const list = document.getElementById("transaction-list");
   if (list) {
     list.innerHTML = "";
     transactions
-      .slice(-5)
+      .slice()
       .reverse()
       .forEach((tx) => {
         const li = document.createElement("li");
@@ -37,7 +37,7 @@ function renderTransactions() {
       });
   }
 
-  // Transactions page full table
+  // Transactions table
   const tableBody = document.getElementById("transactions-table-body");
   if (tableBody) {
     tableBody.innerHTML = "";
@@ -54,7 +54,7 @@ function renderTransactions() {
   }
 }
 
-// Update dashboard summary cards
+// Update summary cards
 function updateDashboardSummary() {
   const transactions = getStoredData("transactions");
   const totalIncome = transactions
@@ -74,7 +74,7 @@ function updateDashboardSummary() {
   if (remainingEl) remainingEl.textContent = `$${remaining.toFixed(2)}`;
 }
 
-// Show/hide category dropdown on transaction type change
+// Show/hide category dropdown on transaction
 function toggleCategoryDropdown() {
   const type = document.getElementById("type")?.value;
   const category = document.getElementById("category");
@@ -88,7 +88,6 @@ function toggleCategoryDropdown() {
 
 // Initialize on DOM load
 document.addEventListener("DOMContentLoaded", () => {
-  // Handle form submit only if form exists (dashboard page)
   const transactionForm = document.getElementById("transaction-form");
   if (transactionForm) {
     transactionForm.addEventListener("submit", (e) => {
